@@ -33,3 +33,8 @@ python delete_person.py <name>
 python add_person_not_owner.py <name> <age> # will fail -> has onlyOwners modifier
 python get_person_not_owner.py <name> # will succeed -> public function
 ```
+
+If you want to interact with the `people` array structure, you can call:
+```
+python call_storage_list.py
+```
