@@ -16,9 +16,6 @@ chain_id = 1337
 my_address = os.getenv("ACCOUNT_ADDRESS")
 private_key = os.getenv("PRIVATE_KEY")
 
-#  Compiled bytecode of smart contract （ Data on the chain ）
-bytecode = compiled_sol["contracts"]["Storage.sol"]["Storage"]["evm"]["bytecode"]["object"]
-
 # ABI (Application Binary Interface), An interface for interacting with methods in a smart contract 
 abi = json.loads(
     compiled_sol["contracts"]["Storage.sol"]["Storage"]["metadata"]

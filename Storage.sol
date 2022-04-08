@@ -1,23 +1,33 @@
 pragma solidity ^0.8.0;
 
 contract Storage {
+
     struct Person {
         string name;
         uint256 age;
         bool isValue;
     }
+
     Person[] public people;
-    mapping (address => bool) public ownerList;
+    mapping (address => bool) public ownerMap;
     mapping (string => Person) public peopleMap;
 
     modifier onlyOwners {
-        require(ownerList[msg.sender] == true);
+        require(ownerMap[msg.sender] == true);
         _;
     }
 
     constructor() public {
         // Automatically add the contract creator as an owner
-        ownerList[msg.sender] = true;
+        ownerMap[msg.sender] = true;
+    }
+
+    function addOwner(address newOwner) public onlyOwners {
+        ownerMap[newOwner] = true;
+    }
+
+    function removeOwner(address owner) public onlyOwners {
+        delete(ownerMap[owner]);
     }
 
     function addToPeopleList(string memory _name, uint256 _age) public {
