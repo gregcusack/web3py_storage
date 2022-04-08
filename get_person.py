@@ -24,8 +24,6 @@ abi = json.loads(
 #  call deploy.py Will get contract_address
 contract_address = os.getenv("CONTRACT_ADDRESS")
 
-nonce = w3.eth.get_transaction_count(my_address)
-
 #  Instantiate the contract object 
 storage = w3.eth.contract(address=contract_address, abi=abi)
 

@@ -32,6 +32,11 @@ python delete_person.py <name>
 
 python add_person_not_owner.py <name> <age> # will fail -> has onlyOwners modifier
 python get_person_not_owner.py <name> # will succeed -> public function
+
+python add_owner.py <owner_address>
+python add_person_not_owner.py <name> <age> # will succeed -> ownerMap updated
+python delete_owner.py <owner_address>
+python add_person_not_owner.py <name> <age> # will fail -> owner removed from ownerMap
 ```
 
 If you want to interact with the `people` array structure, you can call:
